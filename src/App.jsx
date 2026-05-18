@@ -36,7 +36,7 @@ export default function App() {
     borderRadius: "12px",
     marginBottom: "24px",
     cursor: "pointer",
-    display: window.innerWidth < 768 ? "block" : "none",
+    display: "block",
   }}
 >
   ☰

@@ -24,7 +24,7 @@ export default function App() {
     flex: 1,
     padding: "48px",
     minWidth: "320px",
-    marginLeft: window.innerWidth >= 768 ? "220px" : "0",
+    marginLeft: "0",
   }}
 >
       <button

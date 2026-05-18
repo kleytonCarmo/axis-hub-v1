@@ -17,7 +17,7 @@ export default function App() {
       flexWrap: "wrap",
     }}
   >
-    <Sidebar />
+    <Sidebar mobileOpen={mobileOpen} />
 
     <main
       style={{

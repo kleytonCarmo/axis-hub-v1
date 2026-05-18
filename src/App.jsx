@@ -1,9 +1,11 @@
+import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import DashboardCards from "./components/DashboardCards";
 import EvolutionChart from "./components/EvolutionChart";
 import AxisState from "./components/AxisState";
 
 export default function App() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   return (
   <div
     style={{
@@ -24,6 +26,21 @@ export default function App() {
         minWidth: "320px",
       }}
     >
+      <button
+  onClick={() => setMobileOpen(!mobileOpen)}
+  style={{
+    background: "#161616",
+    border: "1px solid #242424",
+    color: "#F5F5F5",
+    padding: "10px 14px",
+    borderRadius: "12px",
+    marginBottom: "24px",
+    cursor: "pointer",
+    display: window.innerWidth < 768 ? "block" : "none",
+  }}
+>
+  ☰
+</button>
       <p style={{ color: "#6B7280", marginBottom: "8px" }}>
         Human Performance Framework
       </p>

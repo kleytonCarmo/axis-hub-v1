@@ -8,15 +8,10 @@ export default function Sidebar({ mobileOpen }) {
         padding: "30px 20px",
         borderRight: "1px solid #1F1F1F",
 
-        position: window.innerWidth < 768 ? "fixed" : "relative",
-        left:
-          window.innerWidth < 768
-            ? mobileOpen
-              ? "0"
-              : "-260px"
-            : "0",
-
+        position: "fixed",
+        left: mobileOpen ? "0" : "-260px",
         top: 0,
+
         transition: "0.3s ease",
         zIndex: 1000,
       }}

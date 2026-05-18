@@ -1,5 +1,6 @@
 import Sidebar from "./components/Sidebar";
 import DashboardCards from "./components/DashboardCards";
+import EvolutionChart from "./components/EvolutionChart";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
       </p>
 
             <DashboardCards />
+<EvolutionChart />
     </main>
   </div>
 );

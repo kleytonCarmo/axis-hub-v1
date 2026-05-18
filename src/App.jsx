@@ -1,6 +1,7 @@
 import Sidebar from "./components/Sidebar";
 import DashboardCards from "./components/DashboardCards";
 import EvolutionChart from "./components/EvolutionChart";
+import AxisState from "./components/AxisState";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
 
             <DashboardCards />
 <EvolutionChart />
+      <AxisState />
     </main>
   </div>
 );

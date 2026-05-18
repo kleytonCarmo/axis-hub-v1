@@ -1,12 +1,21 @@
+import Sidebar from "./components/Sidebar";
 export default function App() {
   return (
+  <div
+    style={{
+      display: "flex",
+      backgroundColor: "#0B0B0B",
+      color: "#F5F5F5",
+      minHeight: "100vh",
+      fontFamily: "Arial, sans-serif",
+    }}
+  >
+    <Sidebar />
+
     <div
       style={{
-        backgroundColor: "#0B0B0B",
-        color: "#F5F5F5",
-        minHeight: "100vh",
+        flex: 1,
         padding: "40px",
-        fontFamily: "Arial, sans-serif",
       }}
     >
       <h1
@@ -80,5 +89,5 @@ export default function App() {
         </div>
       </div>
     </div>
-  );
-}
+  </div>
+);

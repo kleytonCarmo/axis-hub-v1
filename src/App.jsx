@@ -20,12 +20,13 @@ export default function App() {
     <Sidebar mobileOpen={mobileOpen} />
 
     <main
-      style={{
-        flex: 1,
-        padding: "48px",
-        minWidth: "320px",
-      }}
-    >
+  style={{
+    flex: 1,
+    padding: "48px",
+    minWidth: "320px",
+    marginLeft: window.innerWidth >= 768 ? "220px" : "0",
+  }}
+>
       <button
   onClick={() => setMobileOpen(!mobileOpen)}
   style={{

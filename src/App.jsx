@@ -30,15 +30,17 @@ export default function App() {
       <button
   onClick={() => setMobileOpen(!mobileOpen)}
   style={{
-    background: "#161616",
-    border: "1px solid #242424",
-    color: "#F5F5F5",
-    padding: "10px 14px",
-    borderRadius: "12px",
-    marginBottom: "24px",
-    cursor: "pointer",
-    display: "block",
-  }}
+  background: "#161616",
+  border: "1px solid #242424",
+  color: "#F5F5F5",
+  padding: "10px 14px",
+  borderRadius: "12px",
+  marginBottom: "24px",
+  cursor: "pointer",
+  display: "block",
+  position: "relative",
+  zIndex: 2000,
+}}
 >
   ☰
 </button>

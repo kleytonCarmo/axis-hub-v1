@@ -1,4 +1,4 @@
-export default function Sidebar() {
+export default function Sidebar({ mobileOpen }) {
   return (
     <div
       style={{
@@ -7,8 +7,19 @@ export default function Sidebar() {
         minHeight: "100vh",
         padding: "30px 20px",
         borderRight: "1px solid #1F1F1F",
+
+        position: window.innerWidth < 768 ? "fixed" : "relative",
+        left:
+          window.innerWidth < 768
+            ? mobileOpen
+              ? "0"
+              : "-260px"
+            : "0",
+
+        top: 0,
+        transition: "0.3s ease",
+        zIndex: 1000,
       }}
-      className="sidebar"
     >
       <h2
         style={{

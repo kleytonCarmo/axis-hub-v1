@@ -73,7 +73,7 @@ export default function App() {
       <EvolutionChart />
 
       <AxisState />
-        </main>
+            </main>
   </div>
 );
 }

@@ -1,3 +1,4 @@
+import BodyMetrics from "./components/BodyMetrics";
 import AxisState from "./components/AxisState";
 import EvolutionChart from "./components/EvolutionChart";
 import DashboardCards from "./components/DashboardCards";
@@ -38,6 +39,7 @@ export default function App() {
       <h1>AXIS HUB voltou</h1>
       <p>Sistema estabilizado com sidebar.</p>
       <DashboardCards />
+      <BodyMetrics />
       <EvolutionChart />
       <AxisState />
     </div>

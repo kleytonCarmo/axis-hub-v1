@@ -1,3 +1,4 @@
+import EvolutionChart from "./components/EvolutionChart";
 import DashboardCards from "./components/DashboardCards";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
@@ -36,6 +37,7 @@ export default function App() {
       <h1>AXIS HUB voltou</h1>
       <p>Sistema estabilizado com sidebar.</p>
       <DashboardCards />
+      <EvolutionChart />
     </div>
   );
 }

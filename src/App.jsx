@@ -1,3 +1,4 @@
+import AxisState from "./components/AxisState";
 import EvolutionChart from "./components/EvolutionChart";
 import DashboardCards from "./components/DashboardCards";
 import { useState } from "react";
@@ -38,6 +39,7 @@ export default function App() {
       <p>Sistema estabilizado com sidebar.</p>
       <DashboardCards />
       <EvolutionChart />
+      <AxisState />
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default function App() {
       flexWrap: "wrap",
     }}
   >
-    <Sidebar mobileOpen={mobileOpen} />
+    <Sidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
 
     <main
   style={{
@@ -28,21 +28,22 @@ export default function App() {
   }}
 >
       <button
-  onClick={() => setMobileOpen(!mobileOpen)}
+  onClick={() => setMobileOpen(true)}
   style={{
-  background: "#161616",
-  border: "1px solid #242424",
-  color: "#F5F5F5",
-  padding: "10px 14px",
-  borderRadius: "12px",
-  marginBottom: "24px",
-  cursor: "pointer",
-  display: "block",
-  position: "relative",
-  zIndex: 2000,
-}}
+    background: "#F5F5F5",
+    color: "#0B0B0B",
+    border: "none",
+    padding: "12px 16px",
+    borderRadius: "12px",
+    marginBottom: "24px",
+    cursor: "pointer",
+    fontSize: "20px",
+    fontWeight: "bold",
+    position: "relative",
+    zIndex: 10,
+  }}
 >
-  ☰
+  ☰ Menu
 </button>
       <p style={{ color: "#6B7280", marginBottom: "8px" }}>
         Human Performance Framework

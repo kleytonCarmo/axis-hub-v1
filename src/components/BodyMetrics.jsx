@@ -17,7 +17,7 @@ function calculateBodyFat({ sex, height, neck, waist, hip }) {
   return 163.205 * Math.log10(w + hp - n) - 97.684 * Math.log10(h) - 78.387;
 }
 
-export default function BodyMetrics() {
+export default function BodyMetrics({ checkpoints, setCheckpoints }) {
   const [profile, setProfile] = useState({
     sex: "male",
     height: 170,
@@ -27,7 +27,7 @@ export default function BodyMetrics() {
     hip: 93.5,
   });
 
-  const [checkpoints, setCheckpoints] = useState([]);
+
 
   const bodyFat = Math.max(3, calculateBodyFat(profile)).toFixed(1);
   const fatKg = ((profile.weight * bodyFat) / 100).toFixed(1);
@@ -42,15 +42,15 @@ export default function BodyMetrics() {
 
   function saveCheckpoint() {
     const newCheckpoint = {
-      date: new Date().toLocaleDateString("pt-BR"),
-      weight: profile.weight,
-      waist: profile.waist,
-      bodyFat,
-      fatKg,
-      leanMass,
-    };
+  date: `Semana ${checkpoints.length + 1}`,
+  weight: profile.weight,
+  waist: profile.waist,
+  bodyFat: Number(bodyFat),
+  fatKg: Number(fatKg),
+  leanMass: Number(leanMass),
+};
 
-    setCheckpoints([newCheckpoint, ...checkpoints]);
+    setCheckpoints([...checkpoints, newCheckpoint]);
   }
 
   return (

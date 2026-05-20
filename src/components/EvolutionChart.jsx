@@ -8,14 +8,8 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const data = [
-  { week: "W1", bodyFat: 18.0, leanMass: 71.0, waist: 86 },
-  { week: "W2", bodyFat: 17.4, leanMass: 71.3, waist: 85 },
-  { week: "W3", bodyFat: 16.9, leanMass: 71.7, waist: 84 },
-  { week: "W4", bodyFat: 16.2, leanMass: 72.1, waist: 83 },
-];
 
-export default function EvolutionChart() {
+export default function EvolutionChart({ checkpoints }) {
   return (
     <div
       style={{
@@ -38,9 +32,9 @@ export default function EvolutionChart() {
 
       <div style={{ width: "100%", height: "300px" }}>
         <ResponsiveContainer>
-          <LineChart data={data}>
+          <LineChart data={checkpoints}>
             <CartesianGrid stroke="#242424" vertical={false} />
-            <XAxis dataKey="week" stroke="#6B7280" />
+            <XAxis dataKey="date" stroke="#6B7280" />
             <YAxis stroke="#6B7280" />
             <Tooltip
               contentStyle={{

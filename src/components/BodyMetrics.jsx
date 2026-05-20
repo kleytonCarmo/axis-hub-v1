@@ -50,7 +50,17 @@ export default function BodyMetrics({ checkpoints, setCheckpoints }) {
   leanMass: Number(leanMass),
 };
 
-    setCheckpoints([...checkpoints, newCheckpoint]);
+    const updatedCheckpoints = [
+  ...checkpoints,
+  newCheckpoint,
+];
+
+setCheckpoints(updatedCheckpoints);
+
+localStorage.setItem(
+  "axis-checkpoints",
+  JSON.stringify(updatedCheckpoints)
+);
   }
 
   return (

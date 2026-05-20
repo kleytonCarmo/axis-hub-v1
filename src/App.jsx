@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Sidebar from "./components/Sidebar";
 import DashboardCards from "./components/DashboardCards";
@@ -9,14 +9,26 @@ import BodyMetrics from "./components/BodyMetrics";
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const [checkpoints, setCheckpoints] = useState([
+  const [checkpoints, setCheckpoints] = useState(() => {
+  const saved = localStorage.getItem("axis-checkpoints");
+
+  if (saved) {
+    return JSON.parse(saved);
+  }
+
+  return [
     {
       date: "Semana 1",
       bodyFat: 15,
       waist: 81,
       leanMass: 58,
     },
-  ]);
+  ];
+});
+
+useEffect(() => {
+  localStorage.setItem("axis-checkpoints", JSON.stringify(checkpoints));
+}, [checkpoints]);
 
   return (
     <div

@@ -6,29 +6,37 @@ import EvolutionChart from "./components/EvolutionChart";
 import AxisState from "./components/AxisState";
 import BodyMetrics from "./components/BodyMetrics";
 
+const defaultCheckpoints = [
+  {
+    date: "Semana 1",
+    bodyFat: 15,
+    waist: 81,
+    leanMass: 58,
+  },
+];
+
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const [checkpoints, setCheckpoints] = useState(() => {
-  const saved = localStorage.getItem("axis-checkpoints");
+    const saved = localStorage.getItem("axis-checkpoints");
 
-  if (saved) {
-    return JSON.parse(saved);
-  }
+    if (!saved) {
+      return defaultCheckpoints;
+    }
 
-  return [
-    {
-      date: "Semana 1",
-      bodyFat: 15,
-      waist: 81,
-      leanMass: 58,
-    },
-  ];
-});
+    const parsed = JSON.parse(saved);
 
-useEffect(() => {
-  localStorage.setItem("axis-checkpoints", JSON.stringify(checkpoints));
-}, [checkpoints]);
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      return defaultCheckpoints;
+    }
+
+    return parsed;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("axis-checkpoints", JSON.stringify(checkpoints));
+  }, [checkpoints]);
 
   return (
     <div
@@ -39,10 +47,7 @@ useEffect(() => {
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <Sidebar
-        mobileOpen={mobileOpen}
-        setMobileOpen={setMobileOpen}
-      />
+      <Sidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
 
       <main
         style={{
@@ -71,22 +76,11 @@ useEffect(() => {
           Human Performance Framework
         </p>
 
-        <h1
-          style={{
-            fontSize: "44px",
-            margin: 0,
-            letterSpacing: "2px",
-          }}
-        >
+        <h1 style={{ fontSize: "44px", margin: 0, letterSpacing: "2px" }}>
           AXIS HUB
         </h1>
 
-        <p
-          style={{
-            color: "#9CA3AF",
-            marginTop: "14px",
-          }}
-        >
+        <p style={{ color: "#9CA3AF", marginTop: "14px" }}>
           Reconstrua o eixo. O corpo acompanha.
         </p>
 

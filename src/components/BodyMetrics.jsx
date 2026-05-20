@@ -27,6 +27,8 @@ export default function BodyMetrics() {
     hip: 93.5,
   });
 
+  const [checkpoints, setCheckpoints] = useState([]);
+
   const bodyFat = Math.max(3, calculateBodyFat(profile)).toFixed(1);
   const fatKg = ((profile.weight * bodyFat) / 100).toFixed(1);
   const leanMass = (profile.weight - fatKg).toFixed(1);
@@ -36,6 +38,19 @@ export default function BodyMetrics() {
       ...profile,
       [field]: value,
     });
+  }
+
+  function saveCheckpoint() {
+    const newCheckpoint = {
+      date: new Date().toLocaleDateString("pt-BR"),
+      weight: profile.weight,
+      waist: profile.waist,
+      bodyFat,
+      fatKg,
+      leanMass,
+    };
+
+    setCheckpoints([newCheckpoint, ...checkpoints]);
   }
 
   return (
@@ -61,6 +76,26 @@ export default function BodyMetrics() {
         <Metric label="Gordura kg" value={`${fatKg} kg`} />
         <Metric label="Massa magra" value={`${leanMass} kg`} />
       </div>
+
+      <button onClick={saveCheckpoint} style={button}>
+        Salvar checkpoint
+      </button>
+
+      {checkpoints.length > 0 && (
+        <div style={{ marginTop: "24px" }}>
+          <p style={eyebrow}>CHECKPOINTS SALVOS</p>
+
+          {checkpoints.map((item, index) => (
+            <div key={index} style={checkpoint}>
+              <strong>{item.date}</strong>
+              <span>Peso: {item.weight} kg</span>
+              <span>Cintura: {item.waist} cm</span>
+              <span>Gordura: {item.bodyFat}%</span>
+              <span>Massa magra: {item.leanMass} kg</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -148,6 +183,28 @@ const card = {
   border: "1px solid #242424",
   borderRadius: "18px",
   padding: "18px",
+};
+
+const button = {
+  marginTop: "22px",
+  background: "#F5F5F5",
+  color: "#0B0B0B",
+  border: "none",
+  padding: "14px 18px",
+  borderRadius: "14px",
+  fontWeight: "bold",
+  cursor: "pointer",
+};
+
+const checkpoint = {
+  marginTop: "12px",
+  background: "#0B0B0B",
+  border: "1px solid #242424",
+  borderRadius: "16px",
+  padding: "16px",
+  display: "grid",
+  gap: "6px",
+  color: "#D1D5DB",
 };
 
 const labelStyle = {

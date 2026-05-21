@@ -70,16 +70,19 @@ export default function App() {
         <button
           onClick={() => setMobileOpen(true)}
           style={{
-            background: "#F5F5F5",
-            color: "#0B0B0B",
-            border: "none",
-            padding: "12px 16px",
-            borderRadius: "12px",
-            marginBottom: "24px",
-            cursor: "pointer",
-            fontSize: "18px",
-            fontWeight: "bold",
-          }}
+  background: "#161616",
+  color: "#F5F5F5",
+  border: "1px solid #242424",
+  padding: "12px 16px",
+  borderRadius: "14px",
+  marginBottom: "24px",
+  cursor: "pointer",
+  fontSize: "16px",
+  fontWeight: "bold",
+  position: "sticky",
+  top: "16px",
+  zIndex: 500,
+}}
         >
           ☰ Menu
         </button>

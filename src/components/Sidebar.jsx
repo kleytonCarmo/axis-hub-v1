@@ -1,4 +1,10 @@
-export default function Sidebar({ mobileOpen, setMobileOpen, activePage, setActivePage }) {
+export default function Sidebar({ <Sidebar
+  export default function Sidebar({
+  mobileOpen,
+  setMobileOpen,
+  activePage,
+  setActivePage,
+}) {
   const items = [
     { id: "dashboard", label: "Dashboard" },
     { id: "body", label: "Body Metrics" },
@@ -16,6 +22,7 @@ export default function Sidebar({ mobileOpen, setMobileOpen, activePage, setActi
   return (
     <>
       {mobileOpen && (
+      const [activePage, setActivePage] = useState("dashboard");
         <div
           onClick={() => setMobileOpen(false)}
           style={{

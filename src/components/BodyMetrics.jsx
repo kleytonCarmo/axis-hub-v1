@@ -41,6 +41,28 @@ export default function BodyMetrics({ checkpoints, setCheckpoints }) {
   }
 
   function saveCheckpoint() {
+    const savedCalories = localStorage.getItem("axis-calorie-week");
+
+const calorieWeek = savedCalories
+  ? JSON.parse(savedCalories)
+  : [];
+
+const weeklyExercise = calorieWeek.reduce(
+  (sum, day) => sum + Number(day.exercise || 0),
+  0
+);
+
+const weeklyBurn = calorieWeek.reduce(
+  (sum, day) => sum + Number(day.total || 0),
+  0
+);
+
+const weeklyIntake = calorieWeek.reduce(
+  (sum, day) => sum + Number(day.intake || 0),
+  0
+);
+
+const weeklyBalance = weeklyIntake - weeklyBurn;
     const newCheckpoint = {
   date: `Semana ${checkpoints.length + 1}`,
   weight: profile.weight,

@@ -20,10 +20,8 @@ const defaultCheckpoints = [
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-const [activePage, setActivePage] = useState("dashboard");
-
+  const [activePage, setActivePage] = useState("dashboard");
+  
   const [checkpoints, setCheckpoints] = useState(() => {
     const saved = localStorage.getItem("axis-checkpoints");
 

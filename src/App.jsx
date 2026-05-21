@@ -1,3 +1,4 @@
+import PerformanceMetrics from "./components/PerformanceMetrics";
 import CalorieTracker from "./components/CalorieTracker";
 import { useEffect, useState } from "react";
 

@@ -58,12 +58,12 @@ export default function App() {
       setActivePage={setActivePage}
     />
 
-    <main>
-        style={{
-          padding: "32px",
-          minWidth: "320px",
-        }}
-      >
+    <main
+  style={{
+    padding: "32px",
+    minWidth: "320px",
+  }}
+>
         <button
           onClick={() => setMobileOpen(true)}
           style={{

@@ -1,3 +1,4 @@
+import CalorieTracker from "./components/CalorieTracker";
 import { useEffect, useState } from "react";
 
 import Sidebar from "./components/Sidebar";
@@ -87,13 +88,15 @@ export default function App() {
         <DashboardCards />
 
         <BodyMetrics
-          checkpoints={checkpoints}
-          setCheckpoints={setCheckpoints}
-        />
+  checkpoints={checkpoints}
+  setCheckpoints={setCheckpoints}
+/>
 
-        <EvolutionChart checkpoints={checkpoints} />
+<EvolutionChart checkpoints={checkpoints} />
 
-        <AxisState />
+<CalorieTracker />
+
+<AxisState />
       </main>
     </div>
   );

@@ -83,39 +83,55 @@ export default function DashboardCards() {
   ];
 
   return (
-    <div
-  className="axis-card"
-  key={card.label}
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-        gap: "18px",
-        marginTop: "32px",
-      }}
-    >
-      {cards.map((card) => (
-        <div
-  className="axis-card"
-  key={card.label}
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+      gap: "18px",
+      marginTop: "32px",
+    }}
+  >
+    {cards.map((card) => (
+      <div
+        className="axis-card"
+        key={card.label}
+        style={{
+          background: "#161616",
+          border: "1px solid #242424",
+          borderRadius: "22px",
+          padding: "24px",
+        }}
+      >
+        <p
           style={{
-            background: "#161616",
-            border: "1px solid #242424",
-            borderRadius: "22px",
-            padding: "24px",
+            color: "#9CA3AF",
+            fontSize: "13px",
+            marginBottom: "14px",
           }}
         >
-          <p style={{ color: "#9CA3AF", fontSize: "13px", marginBottom: "14px" }}>
-            {card.label}
-          </p>
+          {card.label}
+        </p>
 
-          <h2 style={{ fontSize: "34px", margin: 0, color: "#F5F5F5" }}>
-            {card.value}
-          </h2>
+        <h2
+          style={{
+            fontSize: "34px",
+            margin: 0,
+            color: "#F5F5F5",
+          }}
+        >
+          {card.value}
+        </h2>
 
-          <p style={{ color: "#6B7280", fontSize: "12px", marginTop: "12px" }}>
-            {card.sub}
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
+        <p
+          style={{
+            color: "#6B7280",
+            fontSize: "12px",
+            marginTop: "12px",
+          }}
+        >
+          {card.sub}
+        </p>
+      </div>
+    ))}
+  </div>
+);

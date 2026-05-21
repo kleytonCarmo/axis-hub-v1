@@ -1,4 +1,18 @@
-export default function Sidebar({ mobileOpen, setMobileOpen }) {
+export default function Sidebar({ mobileOpen, setMobileOpen, activePage, setActivePage }) {
+  const items = [
+    { id: "dashboard", label: "Dashboard" },
+    { id: "body", label: "Body Metrics" },
+    { id: "performance", label: "Performance" },
+    { id: "calories", label: "Calories" },
+    { id: "evolution", label: "Evolution" },
+    { id: "state", label: "Axis State" },
+  ];
+
+  function handleClick(id) {
+    setActivePage(id);
+    setMobileOpen(false);
+  }
+
   return (
     <>
       {mobileOpen && (
@@ -45,12 +59,25 @@ export default function Sidebar({ mobileOpen, setMobileOpen }) {
           AXIS
         </h2>
 
-        <div style={{ color: "#9CA3AF", display: "flex", flexDirection: "column", gap: "20px" }}>
-          <span>Dashboard</span>
-          <span>Evolution</span>
-          <span>Performance</span>
-          <span>Execution</span>
-          <span>Protocol</span>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          {items.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleClick(item.id)}
+              style={{
+                background: activePage === item.id ? "#F5F5F5" : "transparent",
+                color: activePage === item.id ? "#0B0B0B" : "#9CA3AF",
+                border: "none",
+                textAlign: "left",
+                padding: "12px",
+                borderRadius: "12px",
+                cursor: "pointer",
+                fontWeight: activePage === item.id ? "bold" : "normal",
+              }}
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
       </aside>
     </>

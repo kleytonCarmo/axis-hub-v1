@@ -48,6 +48,10 @@ export default function BodyMetrics({ checkpoints, setCheckpoints }) {
   bodyFat: Number(bodyFat),
   fatKg: Number(fatKg),
   leanMass: Number(leanMass),
+  weeklyExercise,
+  weeklyBurn,
+  weeklyIntake,
+  weeklyBalance,
 };
 
     const updatedCheckpoints = [
@@ -102,6 +106,10 @@ localStorage.setItem(
               <span>Cintura: {item.waist} cm</span>
               <span>Gordura: {item.bodyFat}%</span>
               <span>Massa magra: {item.leanMass} kg</span>
+              <span>Gasto exercício: {item.weeklyExercise || 0} kcal</span>
+<span>Gasto semanal: {item.weeklyBurn || 0} kcal</span>
+<span>Ingestão semanal: {item.weeklyIntake || 0} kcal</span>
+<span>Balanço semanal: {item.weeklyBalance || 0} kcal</span>
             </div>
           ))}
         </div>

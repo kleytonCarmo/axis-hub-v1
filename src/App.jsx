@@ -18,7 +18,9 @@ const defaultCheckpoints = [
     leanMass: 58,
   },
 ];
-
+const pageTransition = {
+  animation: "fade 0.25s ease",
+};
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activePage, setActivePage] = useState("dashboard");
@@ -116,5 +118,20 @@ export default function App() {
 {activePage === "state" && <AxisState />}
       </main>
     </div>
+  <style>
+  {`
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  `}
+</style>
   );
 }

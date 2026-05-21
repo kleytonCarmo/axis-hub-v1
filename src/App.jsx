@@ -21,6 +21,9 @@ const defaultCheckpoints = [
 const pageTransition = {
   animation: "fade 0.25s ease",
 };
+const pageTransition = {
+  animation: "fade 0.25s ease",
+};
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activePage, setActivePage] = useState("dashboard");
@@ -93,29 +96,43 @@ export default function App() {
 
         {activePage === "dashboard" && (
   <div style={pageTransition}>
-  <>
     <DashboardCards />
     <AxisIndex />
-      </div>
-)}
-
-{activePage === "dashboard" && (
-  <div style={pageTransition}>
-  <BodyMetrics
-    checkpoints={checkpoints}
-    setCheckpoints={setCheckpoints}
   </div>
 )}
 
-{activePage === "performance" && <PerformanceMetrics />}
-
-{activePage === "calories" && <CalorieTracker />}
-
-{activePage === "evolution" && (
-  <EvolutionChart checkpoints={checkpoints} />
+{activePage === "body" && (
+  <div style={pageTransition}>
+    <BodyMetrics
+      checkpoints={checkpoints}
+      setCheckpoints={setCheckpoints}
+    />
+  </div>
 )}
 
-{activePage === "state" && <AxisState />}
+{activePage === "performance" && (
+  <div style={pageTransition}>
+    <PerformanceMetrics />
+  </div>
+)}
+
+{activePage === "calories" && (
+  <div style={pageTransition}>
+    <CalorieTracker />
+  </div>
+)}
+
+{activePage === "evolution" && (
+  <div style={pageTransition}>
+    <EvolutionChart checkpoints={checkpoints} />
+  </div>
+)}
+
+{activePage === "state" && (
+  <div style={pageTransition}>
+    <AxisState />
+  </div>
+)}
       </main>
     </div>
   <style>

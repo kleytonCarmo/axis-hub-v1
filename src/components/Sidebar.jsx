@@ -1,5 +1,4 @@
-export default function Sidebar({ <Sidebar
-  export default function Sidebar({
+export default function Sidebar({
   mobileOpen,
   setMobileOpen,
   activePage,
@@ -22,7 +21,6 @@ export default function Sidebar({ <Sidebar
   return (
     <>
       {mobileOpen && (
-      const [activePage, setActivePage] = useState("dashboard");
         <div
           onClick={() => setMobileOpen(false)}
           style={{

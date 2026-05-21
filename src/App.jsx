@@ -63,6 +63,8 @@ export default function App() {
   style={{
     padding: "32px",
     minWidth: "320px",
+    maxWidth: "1180px",
+    margin: "0 auto",
   }}
 >
         <button

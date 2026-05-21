@@ -93,22 +93,29 @@ export default function App() {
           Reconstrua o eixo. O corpo acompanha.
         </p>
 
-        <DashboardCards />
+        {activePage === "dashboard" && (
+  <>
+    <DashboardCards />
+    <AxisIndex />
+  </>
+)}
 
-<AxisIndex />
+{activePage === "body" && (
+  <BodyMetrics
+    checkpoints={checkpoints}
+    setCheckpoints={setCheckpoints}
+  />
+)}
 
-<BodyMetrics
-  checkpoints={checkpoints}
-  setCheckpoints={setCheckpoints}
-/>
+{activePage === "performance" && <PerformanceMetrics />}
 
-<PerformanceMetrics />
+{activePage === "calories" && <CalorieTracker />}
 
-<CalorieTracker />
+{activePage === "evolution" && (
+  <EvolutionChart checkpoints={checkpoints} />
+)}
 
-<EvolutionChart checkpoints={checkpoints} />
-
-<AxisState />
+{activePage === "state" && <AxisState />}
       </main>
     </div>
   );

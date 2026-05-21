@@ -84,7 +84,8 @@ export default function DashboardCards() {
 
   return (
     <div
-      style={{
+  className="axis-card"
+  key={card.label}
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
         gap: "18px",
@@ -93,7 +94,8 @@ export default function DashboardCards() {
     >
       {cards.map((card) => (
         <div
-          key={card.label}
+  className="axis-card"
+  key={card.label}
           style={{
             background: "#161616",
             border: "1px solid #242424",

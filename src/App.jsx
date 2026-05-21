@@ -90,17 +90,19 @@ export default function App() {
         <TopBar activePage={activePage} />
 
         {activePage === "dashboard" && (
+  <div style={pageTransition}>
   <>
     <DashboardCards />
     <AxisIndex />
-  </>
+      </div>
 )}
 
-{activePage === "body" && (
+{activePage === "dashboard" && (
+  <div style={pageTransition}>
   <BodyMetrics
     checkpoints={checkpoints}
     setCheckpoints={setCheckpoints}
-  />
+  </div>
 )}
 
 {activePage === "performance" && <PerformanceMetrics />}

@@ -88,14 +88,15 @@ export default function App() {
 
         <DashboardCards />
 
-        <BodyMetrics
+<BodyMetrics
   checkpoints={checkpoints}
   setCheckpoints={setCheckpoints}
 />
 
-<EvolutionChart checkpoints={checkpoints} />
+<PerformanceMetrics />
 
 <CalorieTracker />
+        <EvolutionChart checkpoints={checkpoints} />
 
 <AxisState />
       </main>

@@ -20,6 +20,9 @@ const defaultCheckpoints = [
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+const [activePage, setActivePage] = useState("dashboard");
 
   const [checkpoints, setCheckpoints] = useState(() => {
     const saved = localStorage.getItem("axis-checkpoints");
@@ -50,8 +53,9 @@ export default function App() {
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <Sidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+      const [mobileOpen, setMobileOpen] = useState(false);
 
+const [activePage, setActivePage] = useState("dashboard");
       <main
         style={{
           padding: "32px",

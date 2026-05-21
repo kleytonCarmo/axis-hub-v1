@@ -43,18 +43,22 @@ export default function App() {
   }, [checkpoints]);
 
   return (
-    <div
-      style={{
-        backgroundColor: "#0B0B0B",
-        color: "#F5F5F5",
-        minHeight: "100vh",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      const [mobileOpen, setMobileOpen] = useState(false);
+  <div
+    style={{
+      backgroundColor: "#0B0B0B",
+      color: "#F5F5F5",
+      minHeight: "100vh",
+      fontFamily: "Arial, sans-serif",
+    }}
+  >
+    <Sidebar
+      mobileOpen={mobileOpen}
+      setMobileOpen={setMobileOpen}
+      activePage={activePage}
+      setActivePage={setActivePage}
+    />
 
-const [activePage, setActivePage] = useState("dashboard");
-      <main
+    <main>
         style={{
           padding: "32px",
           minWidth: "320px",

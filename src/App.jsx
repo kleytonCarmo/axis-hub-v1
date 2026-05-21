@@ -1,3 +1,4 @@
+import AxisIndex from "./components/AxisIndex";
 import PerformanceMetrics from "./components/PerformanceMetrics";
 import CalorieTracker from "./components/CalorieTracker";
 import { useEffect, useState } from "react";
@@ -88,6 +89,8 @@ export default function App() {
 
         <DashboardCards />
 
+<AxisIndex />
+
 <BodyMetrics
   checkpoints={checkpoints}
   setCheckpoints={setCheckpoints}
@@ -96,7 +99,8 @@ export default function App() {
 <PerformanceMetrics />
 
 <CalorieTracker />
-        <EvolutionChart checkpoints={checkpoints} />
+
+<EvolutionChart checkpoints={checkpoints} />
 
 <AxisState />
       </main>

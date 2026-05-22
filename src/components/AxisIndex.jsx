@@ -81,7 +81,7 @@ export default function AxisIndex() {
       : "Eixo fora do centro";
 
   return (
-    <div style={box}>
+    <div className="axis-card" style={box}>
       <p style={eyebrow}>AXIS INDEX</p>
 
       <h2 style={title}>{index}</h2>

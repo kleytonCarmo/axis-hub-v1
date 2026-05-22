@@ -34,7 +34,8 @@ export default function Sidebar({
       )}
 
       <aside
-        style={{
+  className="axis-sidebar"
+  style={{
           width: "250px",
           background: "linear-gradient(180deg, #111111, #0B0B0B)",
           minHeight: "100vh",

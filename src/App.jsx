@@ -65,6 +65,7 @@ export default function App() {
           minWidth: "320px",
           maxWidth: "1180px",
           margin: "0 auto",
+          marginLeft: "270px",
         }}
       >
         <button

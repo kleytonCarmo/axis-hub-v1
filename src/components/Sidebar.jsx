@@ -41,7 +41,7 @@ export default function Sidebar({
           padding: "32px 22px",
           borderRight: "1px solid #242424",
           position: "fixed",
-          left: mobileOpen ? "0" : "0",
+          left: mobileOpen ? "0" : "-290px",
           top: 0,
           transition: "0.3s ease",
           zIndex: 1000,

@@ -27,7 +27,7 @@ export default function PerformanceMetrics() {
   }
 
   return (
-    <div style={box}>
+    <div className="axis-card" style={box}>
       <p style={eyebrow}>PERFORMANCE METRICS</p>
 
       <h2 style={title}>Estado fisiológico diário.</h2>

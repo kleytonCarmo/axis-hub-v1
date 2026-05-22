@@ -60,6 +60,7 @@ export default function App() {
       />
 
       <main
+        className="axis-main"
         style={{
           padding: "32px",
           minWidth: "320px",

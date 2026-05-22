@@ -12,7 +12,8 @@ import {
 export default function EvolutionChart({ checkpoints }) {
   return (
     <div
-      style={{
+  className="axis-card"
+  style={{
         marginTop: "28px",
         background: "#161616",
         border: "1px solid #242424",

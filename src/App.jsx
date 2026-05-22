@@ -1,3 +1,4 @@
+import TrainingMode from "./components/TrainingMode";
 import DashboardInsight from "./components/DashboardInsight";
 import TopBar from "./components/TopBar";
 import AxisIndex from "./components/AxisIndex";
@@ -96,6 +97,7 @@ export default function App() {
   <div className="fade-page">
     <DashboardCards />
     <AxisIndex />
+    <TrainingMode />
     <DashboardInsight />
   </div>
 )}

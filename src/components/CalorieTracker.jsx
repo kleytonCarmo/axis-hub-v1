@@ -35,7 +35,7 @@ export default function CalorieTracker() {
   const weeklyBalance = totalIntake - totalDailyBurn;
 
   return (
-    <div style={box}>
+    <div className="axis-card" style={box}>
       <p style={eyebrow}>CALORIE TRACKER</p>
 
       <h2 style={title}>Balanço energético semanal.</h2>

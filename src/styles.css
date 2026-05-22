@@ -13,3 +13,8 @@
     padding: 24px !important;
   }
 }
+@media (min-width: 769px) {
+  .axis-sidebar {
+    left: 0 !important;
+  }
+}

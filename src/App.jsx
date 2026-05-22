@@ -1,3 +1,4 @@
+import DashboardInsight from "./components/DashboardInsight";
 import TopBar from "./components/TopBar";
 import AxisIndex from "./components/AxisIndex";
 import PerformanceMetrics from "./components/PerformanceMetrics";
@@ -92,11 +93,12 @@ export default function App() {
         <TopBar activePage={activePage} />
 
         {activePage === "dashboard" && (
-          <div className="fade-page">
-            <DashboardCards />
-            <AxisIndex />
-          </div>
-        )}
+  <div className="fade-page">
+    <DashboardCards />
+    <AxisIndex />
+    <DashboardInsight />
+  </div>
+)}
 
         {activePage === "body" && (
           <div className="fade-page">

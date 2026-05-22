@@ -90,7 +90,7 @@ localStorage.setItem(
   }
 
   return (
-    <div style={box}>
+    <div className="axis-card" style={box}>
       <p style={eyebrow}>BODY METRICS</p>
 
       <h2 style={title}>Composição corporal operacional.</h2>

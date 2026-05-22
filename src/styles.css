@@ -7,3 +7,9 @@
   border-color: #3a3a3a !important;
   background: #1a1a1a !important;
 }
+@media (max-width: 768px) {
+  .axis-main {
+    margin-left: 0 !important;
+    padding: 24px !important;
+  }
+}

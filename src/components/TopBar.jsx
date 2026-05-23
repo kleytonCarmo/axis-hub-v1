@@ -1,12 +1,13 @@
 export default function TopBar({ activePage }) {
   const titles = {
-    dashboard: "Dashboard",
-    body: "Body Metrics",
-    performance: "Performance",
-    calories: "Calories",
-    evolution: "Evolution",
-    state: "Axis State",
-  };
+  dashboard: "Dashboard",
+  body: "Body Metrics",
+  performance: "Performance",
+  calories: "Calories",
+  protocol: "Protocol",
+  evolution: "Evolution",
+  state: "Axis State",
+};
 
   const today = new Date().toLocaleDateString("pt-BR", {
     weekday: "long",

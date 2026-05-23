@@ -1,3 +1,4 @@
+import Protocol from "./components/Protocol";
 import TrainingMode from "./components/TrainingMode";
 import DashboardInsight from "./components/DashboardInsight";
 import TopBar from "./components/TopBar";
@@ -123,6 +124,11 @@ export default function App() {
           </div>
         )}
 
+        {activePage === "protocol" && (
+  <div className="fade-page">
+    <Protocol />
+  </div>
+)}
         {activePage === "evolution" && (
           <div className="fade-page">
             <EvolutionChart checkpoints={checkpoints} />

@@ -5,13 +5,14 @@ export default function Sidebar({
   setActivePage,
 }) {
   const items = [
-    { id: "dashboard", label: "Dashboard" },
-    { id: "body", label: "Body Metrics" },
-    { id: "performance", label: "Performance" },
-    { id: "calories", label: "Calories" },
-    { id: "evolution", label: "Evolution" },
-    { id: "state", label: "Axis State" },
-  ];
+  { id: "dashboard", label: "Dashboard" },
+  { id: "body", label: "Body Metrics" },
+  { id: "performance", label: "Performance" },
+  { id: "calories", label: "Calories" },
+  { id: "protocol", label: "Protocol" },
+  { id: "evolution", label: "Evolution" },
+  { id: "state", label: "Axis State" },
+];
 
   function handleClick(id) {
     setActivePage(id);

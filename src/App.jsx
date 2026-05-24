@@ -1,19 +1,19 @@
-import { getStorage, setStorage, STORAGE_KEYS } from "./lib/storage";
-import OperationalTimeline from "./components/OperationalTimeline";
-import ReadinessTrend from "./components/ReadinessTrend";
-import DailyLogHistory from "./components/DailyLogHistory";
-import DailyLog from "./components/DailyLog";
-import RecoveryTrend from "./components/RecoveryTrend";
-import WeeklyReadiness from "./components/WeeklyReadiness";
-import ProtocolRecommendation from "./components/ProtocolRecommendation";
 import Protocol from "./components/Protocol";
 import TrainingMode from "./components/TrainingMode";
 import DashboardInsight from "./components/DashboardInsight";
+import ProtocolRecommendation from "./components/ProtocolRecommendation";
+import WeeklyReadiness from "./components/WeeklyReadiness";
+import RecoveryTrend from "./components/RecoveryTrend";
+import ReadinessTrend from "./components/ReadinessTrend";
+import DailyLog from "./components/DailyLog";
+import DailyLogHistory from "./components/DailyLogHistory";
+import OperationalTimeline from "./components/OperationalTimeline";
 import TopBar from "./components/TopBar";
 import AxisIndex from "./components/AxisIndex";
 import PerformanceMetrics from "./components/PerformanceMetrics";
 import CalorieTracker from "./components/CalorieTracker";
 import { useEffect, useState } from "react";
+import { getStorage, setStorage, STORAGE_KEYS } from "./lib/storage";
 
 import Sidebar from "./components/Sidebar";
 import DashboardCards from "./components/DashboardCards";
@@ -35,8 +35,8 @@ export default function App() {
   const [activePage, setActivePage] = useState("dashboard");
 
   const [checkpoints, setCheckpoints] = useState(() =>
-  getStorage(STORAGE_KEYS.checkpoints, defaultCheckpoints)
-);
+    getStorage(STORAGE_KEYS.checkpoints, defaultCheckpoints)
+  );
 
   useEffect(() => {
     setStorage(STORAGE_KEYS.checkpoints, checkpoints);
@@ -91,30 +91,29 @@ export default function App() {
         <TopBar activePage={activePage} />
 
         {activePage === "dashboard" && (
-  <div className="fade-page">
-    <DashboardCards />
+          <div className="fade-page">
+            <DashboardCards />
 
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-        gap: "24px",
-      }}
-    >
-      <DashboardCards />
-<AxisIndex />
-<WeeklyReadiness />
-<RecoveryTrend />
-<ReadinessTrend />
-<ProtocolRecommendation />
-<TrainingMode />
-<DailyLog />
-<DailyLogHistory />
-<OperationalTimeline />
-<DashboardInsight />
-    </div>
-  </div>
-)}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                gap: "24px",
+              }}
+            >
+              <AxisIndex />
+              <WeeklyReadiness />
+              <RecoveryTrend />
+              <ReadinessTrend />
+              <ProtocolRecommendation />
+              <TrainingMode />
+              <DailyLog />
+              <DailyLogHistory />
+              <OperationalTimeline />
+              <DashboardInsight />
+            </div>
+          </div>
+        )}
 
         {activePage === "body" && (
           <div className="fade-page">
@@ -138,10 +137,11 @@ export default function App() {
         )}
 
         {activePage === "protocol" && (
-  <div className="fade-page">
-    <Protocol />
-  </div>
-)}
+          <div className="fade-page">
+            <Protocol />
+          </div>
+        )}
+
         {activePage === "evolution" && (
           <div className="fade-page">
             <EvolutionChart checkpoints={checkpoints} />

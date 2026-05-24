@@ -1,3 +1,4 @@
+import WeeklyReadiness from "./components/WeeklyReadiness";
 import ProtocolRecommendation from "./components/ProtocolRecommendation";
 import Protocol from "./components/Protocol";
 import TrainingMode from "./components/TrainingMode";

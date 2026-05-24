@@ -1,3 +1,4 @@
+import OperationalTimeline from "./components/OperationalTimeline";
 import ReadinessTrend from "./components/ReadinessTrend";
 import DailyLogHistory from "./components/DailyLogHistory";
 import DailyLog from "./components/DailyLog";
@@ -120,6 +121,7 @@ export default function App() {
 <TrainingMode />
 <DailyLog />
 <DailyLogHistory />
+<OperationalTimeline />
 <DashboardInsight />
     </div>
   </div>

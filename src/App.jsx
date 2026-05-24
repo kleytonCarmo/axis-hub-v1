@@ -1,3 +1,4 @@
+import ProtocolRecommendation from "./components/ProtocolRecommendation";
 import Protocol from "./components/Protocol";
 import TrainingMode from "./components/TrainingMode";
 import DashboardInsight from "./components/DashboardInsight";
@@ -98,6 +99,7 @@ export default function App() {
   <div className="fade-page">
     <DashboardCards />
     <AxisIndex />
+    <ProtocolRecommendation />
     <TrainingMode />
     <DashboardInsight />
   </div>

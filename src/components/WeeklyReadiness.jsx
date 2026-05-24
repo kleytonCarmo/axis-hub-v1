@@ -27,6 +27,9 @@ export default function WeeklyReadiness() {
       balanceScore * 0.1
   );
 
+  const color =
+    readiness >= 85 ? "#86EFAC" : readiness >= 70 ? "#FCD34D" : "#FCA5A5";
+
   const trend =
     readiness >= 85
       ? "↑ alta prontidão"
@@ -50,16 +53,16 @@ export default function WeeklyReadiness() {
       <p style={eyebrow}>WEEKLY READINESS</p>
 
       <div style={header}>
-        <h2 style={score}>{readiness}%</h2>
+        <h2 style={{ ...score, color }}>{readiness}%</h2>
 
         <div>
           <p style={statusText}>{status}</p>
-          <p style={trendText}>{trend}</p>
+          <p style={{ ...trendText, color }}>{trend}</p>
         </div>
       </div>
 
       <div style={bar}>
-        <div style={{ ...fill, width: `${readiness}%` }} />
+        <div style={{ ...fill, width: `${readiness}%`, background: color }} />
       </div>
 
       <p style={description}>
@@ -92,7 +95,6 @@ const header = {
 const score = {
   fontSize: "56px",
   margin: 0,
-  color: "#F5F5F5",
 };
 
 const statusText = {
@@ -102,7 +104,6 @@ const statusText = {
 };
 
 const trendText = {
-  color: "#9CA3AF",
   marginTop: "8px",
 };
 
@@ -116,7 +117,6 @@ const bar = {
 
 const fill = {
   height: "100%",
-  background: "#F5F5F5",
   borderRadius: "999px",
   transition: "0.3s ease",
 };

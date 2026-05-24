@@ -1,3 +1,4 @@
+import DailyLog from "./components/DailyLog";
 import RecoveryTrend from "./components/RecoveryTrend";
 import WeeklyReadiness from "./components/WeeklyReadiness";
 import ProtocolRecommendation from "./components/ProtocolRecommendation";
@@ -113,6 +114,7 @@ export default function App() {
       <RecoveryTrend />
       <ProtocolRecommendation />
       <TrainingMode />
+      <DailyLog />
       <DashboardInsight />
     </div>
   </div>

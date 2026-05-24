@@ -1,3 +1,4 @@
+import { getStorage, setStorage, STORAGE_KEYS } from "../lib/storage";
 import { useEffect, useState } from "react";
 
 const initialWeek = [
@@ -11,13 +12,12 @@ const initialWeek = [
 ];
 
 export default function CalorieTracker() {
-  const [week, setWeek] = useState(() => {
-    const saved = localStorage.getItem("axis-calorie-week");
-    return saved ? JSON.parse(saved) : initialWeek;
-  });
+  const [week, setWeek] = useState(() =>
+  getStorage(STORAGE_KEYS.calories, initialWeek)
+);
 
   useEffect(() => {
-    localStorage.setItem("axis-calorie-week", JSON.stringify(week));
+    setStorage(STORAGE_KEYS.calories, week);
   }, [week]);
 
   function updateDay(index, field, value) {

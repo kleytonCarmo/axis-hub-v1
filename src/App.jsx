@@ -1,3 +1,4 @@
+import ReadinessTrend from "./components/ReadinessTrend";
 import DailyLogHistory from "./components/DailyLogHistory";
 import DailyLog from "./components/DailyLog";
 import RecoveryTrend from "./components/RecoveryTrend";
@@ -114,6 +115,7 @@ export default function App() {
 <AxisIndex />
 <WeeklyReadiness />
 <RecoveryTrend />
+<ReadinessTrend />
 <ProtocolRecommendation />
 <TrainingMode />
 <DailyLog />

@@ -1,3 +1,4 @@
+import RecoveryTrend from "./components/RecoveryTrend";
 import WeeklyReadiness from "./components/WeeklyReadiness";
 import ProtocolRecommendation from "./components/ProtocolRecommendation";
 import Protocol from "./components/Protocol";
@@ -101,6 +102,7 @@ export default function App() {
     <DashboardCards />
     <AxisIndex />
     <WeeklyReadiness />
+    <RecoveryTrend />
     <ProtocolRecommendation />
     <TrainingMode />
     <DashboardInsight />

@@ -1,3 +1,7 @@
+import {
+  calculateReadiness,
+  getReadinessColor,
+} from "../utils/readiness";
 export function calculateReadiness(data) {
   const recovery = Number(data.recovery || 80);
 

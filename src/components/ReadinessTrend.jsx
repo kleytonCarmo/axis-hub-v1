@@ -1,7 +1,10 @@
+import {
+  calculateReadiness,
+  getReadinessColor,
+} from "../utils/readiness";
 export default function ReadinessTrend() {
   const logs = JSON.parse(localStorage.getItem("axis-daily-logs") || "[]");
 
-  function calculateReadiness(log) {
     const recovery = Number(log.recovery || 80);
     const sleepScore = Math.min(100, (Number(log.sleep || 7.5) / 8) * 100);
     const energyScore = Number(log.energy || 8) * 10;
@@ -49,12 +52,7 @@ export default function ReadinessTrend() {
               style={{
                 ...bar,
                 height: `${value}%`,
-                background:
-                  value >= 85
-                    ? "#86EFAC"
-                    : value >= 70
-                    ? "#FCD34D"
-                    : "#FCA5A5",
+                background: getReadinessColor(value),
               }}
             />
 

@@ -1,3 +1,4 @@
+import DailyLogHistory from "./components/DailyLogHistory";
 import DailyLog from "./components/DailyLog";
 import RecoveryTrend from "./components/RecoveryTrend";
 import WeeklyReadiness from "./components/WeeklyReadiness";
@@ -109,13 +110,15 @@ export default function App() {
         gap: "24px",
       }}
     >
-      <AxisIndex />
-      <WeeklyReadiness />
-      <RecoveryTrend />
-      <ProtocolRecommendation />
-      <TrainingMode />
-      <DailyLog />
-      <DashboardInsight />
+      <DashboardCards />
+<AxisIndex />
+<WeeklyReadiness />
+<RecoveryTrend />
+<ProtocolRecommendation />
+<TrainingMode />
+<DailyLog />
+<DailyLogHistory />
+<DashboardInsight />
     </div>
   </div>
 )}

@@ -100,6 +100,7 @@ export default function App() {
   <div className="fade-page">
     <DashboardCards />
     <AxisIndex />
+    <WeeklyReadiness />
     <ProtocolRecommendation />
     <TrainingMode />
     <DashboardInsight />

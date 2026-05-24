@@ -1,3 +1,4 @@
+import { getStorage, setStorage, STORAGE_KEYS } from "./lib/storage";
 import OperationalTimeline from "./components/OperationalTimeline";
 import ReadinessTrend from "./components/ReadinessTrend";
 import DailyLogHistory from "./components/DailyLogHistory";
@@ -34,7 +35,7 @@ export default function App() {
   const [activePage, setActivePage] = useState("dashboard");
 
   const [checkpoints, setCheckpoints] = useState(() => {
-    const saved = localStorage.getItem("axis-checkpoints");
+    const saved = getStorage(STORAGE_KEYS.checkpoints, defaultCheckpoints);
 
     if (!saved) {
       return defaultCheckpoints;

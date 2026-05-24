@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getStorage, setStorage, STORAGE_KEYS } from "../lib/storage";
 
 const defaultPerformance = {
   recovery: 80,
@@ -10,13 +11,12 @@ const defaultPerformance = {
 };
 
 export default function PerformanceMetrics() {
-  const [performance, setPerformance] = useState(() => {
-    const saved = localStorage.getItem("axis-performance");
-    return saved ? JSON.parse(saved) : defaultPerformance;
-  });
+  const [performance, setPerformance] = useState(() =>
+    getStorage(STORAGE_KEYS.performance, defaultPerformance)
+  );
 
   useEffect(() => {
-    localStorage.setItem("axis-performance", JSON.stringify(performance));
+    setStorage(STORAGE_KEYS.performance, performance);
   }, [performance]);
 
   function update(field, value) {

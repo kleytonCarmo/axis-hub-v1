@@ -1,3 +1,4 @@
+import { getStorage, setStorage, STORAGE_KEYS } from "./lib/storage";
 import Protocol from "./components/Protocol";
 import TrainingMode from "./components/TrainingMode";
 import DashboardInsight from "./components/DashboardInsight";

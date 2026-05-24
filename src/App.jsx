@@ -100,12 +100,21 @@ export default function App() {
         {activePage === "dashboard" && (
   <div className="fade-page">
     <DashboardCards />
-    <AxisIndex />
-    <WeeklyReadiness />
-    <RecoveryTrend />
-    <ProtocolRecommendation />
-    <TrainingMode />
-    <DashboardInsight />
+
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+        gap: "24px",
+      }}
+    >
+      <AxisIndex />
+      <WeeklyReadiness />
+      <RecoveryTrend />
+      <ProtocolRecommendation />
+      <TrainingMode />
+      <DashboardInsight />
+    </div>
   </div>
 )}
 

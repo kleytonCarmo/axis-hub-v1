@@ -34,21 +34,9 @@ export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activePage, setActivePage] = useState("dashboard");
 
-  const [checkpoints, setCheckpoints] = useState(() => {
-    const saved = getStorage(STORAGE_KEYS.checkpoints, defaultCheckpoints);
-
-    if (!saved) {
-      return defaultCheckpoints;
-    }
-
-    const parsed = JSON.parse(saved);
-
-    if (!Array.isArray(parsed) || parsed.length === 0) {
-      return defaultCheckpoints;
-    }
-
-    return parsed;
-  });
+  const [checkpoints, setCheckpoints] = useState(() =>
+  getStorage(STORAGE_KEYS.checkpoints, defaultCheckpoints)
+);
 
   useEffect(() => {
     localStorage.setItem("axis-checkpoints", JSON.stringify(checkpoints));

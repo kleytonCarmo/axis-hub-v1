@@ -1,4 +1,12 @@
+import { useEffect, useState } from "react";
+
 export default function RecoveryTrend() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setLoaded(true), 100);
+  }, []);
+
   const performance = JSON.parse(
     localStorage.getItem("axis-performance") || "{}"
   );
@@ -26,7 +34,6 @@ export default function RecoveryTrend() {
 
       <div style={header}>
         <h2 style={score}>{recovery}%</h2>
-
         <p style={trendText}>{trend}</p>
       </div>
 
@@ -36,7 +43,7 @@ export default function RecoveryTrend() {
             <div
               style={{
                 ...bar,
-                height: `${value}%`,
+                height: loaded ? `${value}%` : "0%",
                 background:
                   value >= 80
                     ? "#86EFAC"
@@ -108,7 +115,7 @@ const barContainer = {
 const bar = {
   width: "100%",
   borderRadius: "14px 14px 6px 6px",
-  transition: "0.3s ease",
+  transition: "height 0.6s ease",
 };
 
 const label = {

@@ -39,7 +39,7 @@ export default function App() {
 );
 
   useEffect(() => {
-    localStorage.setItem("axis-checkpoints", JSON.stringify(checkpoints));
+    setStorage(STORAGE_KEYS.checkpoints, checkpoints);
   }, [checkpoints]);
 
   return (

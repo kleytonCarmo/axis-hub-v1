@@ -11,34 +11,49 @@ export default function RecoveryTrend() {
     localStorage.getItem("axis-performance") || "{}"
   );
 
-  const recovery = Number(performance.recovery || 80);
+  const logs = JSON.parse(
+    localStorage.getItem("axis-daily-logs") || "[]"
+  );
 
-  const trendData = [
-    Math.max(recovery - 12, 45),
-    Math.max(recovery - 8, 50),
-    Math.max(recovery - 5, 55),
-    Math.max(recovery - 2, 60),
-    recovery,
-  ];
+  const currentRecovery = Number(performance.recovery || 80);
+
+  const recoveryData =
+    logs.length > 0
+      ? logs.slice(-5).map((log) => Number(log.recovery || 0))
+      : [
+          Math.max(currentRecovery - 12, 45),
+          Math.max(currentRecovery - 8, 50),
+          Math.max(currentRecovery - 5, 55),
+          Math.max(currentRecovery - 2, 60),
+          currentRecovery,
+        ];
+
+  const latestRecovery =
+    recoveryData[recoveryData.length - 1] || currentRecovery;
+
+  const previousRecovery =
+    recoveryData.length > 1
+      ? recoveryData[recoveryData.length - 2]
+      : latestRecovery;
 
   const trend =
-    recovery >= 80
+    latestRecovery > previousRecovery
       ? "Improving Recovery"
-      : recovery >= 65
-      ? "Stable Recovery"
-      : "Recovery Under Pressure";
+      : latestRecovery < previousRecovery
+      ? "Recovery Under Pressure"
+      : "Stable Recovery";
 
   return (
     <div className="axis-card" style={box}>
       <p style={eyebrow}>RECOVERY TREND</p>
 
       <div style={header}>
-        <h2 style={score}>{recovery}%</h2>
+        <h2 style={score}>{latestRecovery}%</h2>
         <p style={trendText}>{trend}</p>
       </div>
 
       <div style={chart}>
-        {trendData.map((value, index) => (
+        {recoveryData.map((value, index) => (
           <div key={index} style={barContainer}>
             <div
               style={{
@@ -59,7 +74,7 @@ export default function RecoveryTrend() {
       </div>
 
       <p style={description}>
-        Tendência de recuperação operacional dos últimos dias.
+        Tendência real baseada nos últimos Daily Logs salvos.
       </p>
     </div>
   );

@@ -1,4 +1,7 @@
+import { useEffect, useState } from "react";
+
 import { getStorage, setStorage, STORAGE_KEYS } from "./lib/storage";
+
 import Protocol from "./components/Protocol";
 import TrainingMode from "./components/TrainingMode";
 import DashboardInsight from "./components/DashboardInsight";
@@ -13,9 +16,6 @@ import TopBar from "./components/TopBar";
 import AxisIndex from "./components/AxisIndex";
 import PerformanceMetrics from "./components/PerformanceMetrics";
 import CalorieTracker from "./components/CalorieTracker";
-import { useEffect, useState } from "react";
-import { getStorage, setStorage, STORAGE_KEYS } from "./lib/storage";
-
 import Sidebar from "./components/Sidebar";
 import DashboardCards from "./components/DashboardCards";
 import EvolutionChart from "./components/EvolutionChart";
